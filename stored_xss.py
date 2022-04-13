@@ -11,8 +11,9 @@ parser.add_argument('-p', required=True, help="database password");
 parser.add_argument('-url', required=True, help="URL of the application" );
 args = parser.parse_args();
 
-def runMysql_Command():
+def runMysql_Command(username, password, url):
     print(username, password, url);
+    os.system(f"mysql -u {username} -h pravin.itechers.net --password='{password}' -e 'select * from itecher.staff'");
     
 
 
